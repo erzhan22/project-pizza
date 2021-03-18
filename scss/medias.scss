@@ -1,0 +1,297 @@
+@import "vars";
+
+.container {
+  @include breakpointMinMax($large, 1200px) {
+    max-width: 960px;
+  }
+  @include breakpointMinMax($medium, $large) {
+    max-width: 720px;
+  }
+  @include breakpointMinMax($small, $medium) {
+    max-width: 540px;
+  }
+  @include breakpoint($small) {
+    padding: 0 1rem;
+  }
+}
+
+.navbar {
+  @include breakpoint($large) {
+    position: relative;
+  }
+}
+
+.navbar__nav {
+  @include breakpoint($large) {
+    position: fixed;
+    transform: translateX(-35rem);
+    flex-direction: column;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    width: 27rem;
+    height: 100vh;
+    z-index: 100;
+    align-items: initial;
+    .navbar__nav-logo {
+      display: block;
+      padding: 2rem;
+    }
+    .navbar__item {
+      margin: 0;
+      & > a {
+        display: flex;
+        padding: 2rem 1rem;
+        font-size: 1.4rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      &:first-child {
+        padding-bottom: 1rem;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.nav__blog,
+.nav__home {
+  @include breakpoint($large) {
+    a {
+      i {
+        font-size: 1.2rem;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.sub-menu {
+  @include breakpoint($large) {
+    display: none;
+    position: static;
+    opacity: 1;
+    width: 100%;
+    transform: translate(0);
+    border-radius: 0;
+    box-shadow: none;
+    text-align: start;
+    background-color: #f9f9f9;
+    a {
+      padding: 2rem 1rem;
+    }
+    &:last-child {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.navbar__burger {
+  @include breakpoint($large) {
+    display: block;
+  }
+}
+
+.banner {
+  @include breakpoint($large) {
+    padding-top: 3rem;
+    .banner__top-img {
+      display: none;
+    }
+  }
+  @include breakpoint($medium) {
+    h1 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+  }
+}
+.banner__slider-wrapper {
+  @include breakpoint($large) {
+    flex-direction: column;
+    text-align: center;
+    .banner__text {
+      order: 2;
+      margin: 3rem 0 0 0;
+      padding-bottom: 3rem;
+    }
+    .banner__img {
+      order: 1;
+      img {
+        max-width: 60%;
+      }
+    }
+    .banner__info,
+    .banner__slider__btn {
+      justify-content: center;
+    }
+  }
+}
+
+.banner__controls {
+  @include breakpoint($large) {
+    padding-top: 1rem;
+    .banner__controls-btn {
+      padding: 1.5rem 1.7rem;
+      font-size: 1.3rem;
+    }
+  }
+  @include breakpoint($medium) {
+    padding-top: 1rem;
+    .banner__controls-btn {
+      display: none;
+    }
+    .banner__controls-slide {
+      padding: 1rem;
+      max-width: 30rem;
+    }
+  }
+}
+
+.about-us__wrapper {
+  @include breakpoint($large) {
+    flex-direction: column;
+    .about-us__img {
+      max-width: 90%;
+    }
+    .about-us__text {
+      margin-top: 2rem;
+      max-width: 100%;
+      h2 {
+        font-size: 2.6rem;
+      }
+    }
+  }
+}
+
+.full-menu {
+  padding: 0;
+  @include breakpoint($large) {
+    .full-menu__pizza,
+    .full-menu__pasta {
+      flex-direction: column;
+    }
+
+    .full-menu__pizza-img,
+    .full-menu__pasta-img {
+      min-height: 30rem;
+      padding: 0;
+      width: 100%;
+      margin-top: 4rem;
+    }
+    .full-menu__info {
+      padding: 0;
+      width: 100%;
+      padding: 0 1rem;
+      h2 {
+        font-size: 2.4rem;
+      }
+    }
+    .full-menu__pasta {
+      .full-menu__pasta-img {
+        order: 1;
+      }
+      .full-menu__info {
+        order: 2;
+      }
+    }
+    .full-menu__list {
+      grid-template-columns: 1fr;
+      margin-top: 5rem;
+    }
+    .full-menu__item {
+      p {
+        padding-left: 1rem;
+        font-size: 1.4rem;
+        max-width: 50%;
+      }
+    }
+    .full-menu__center-img {
+      display: none;
+    }
+  }
+}
+.products {
+  @include breakpoint($medium) {
+    .product__img {
+      img {
+        width: 60%;
+      }
+    }
+    button {
+      box-shadow: none;
+      padding: 0.8rem 2rem;
+      font-size: 12px;
+    }
+  }
+}
+.hit-sale__arrows,
+.reviews__arrows {
+  @include breakpoint($large) {
+    button {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}
+.title-text {
+  @include breakpoint($large) {
+    h2 {
+      font-size: 2.6rem;
+    }
+  }
+}
+.reviews__slide-body {
+  @include breakpoint($large) {
+    h5 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+  }
+}
+.footer__top {
+  @include breakpoint($medium) {
+    flex-direction: column;
+    .footer__logo {
+      margin: 0 0 3rem 0;
+    }
+  }
+}
+.footer__middle {
+  @include breakpoint($large) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 6rem;
+    .footer__middle-social {
+      p {
+        max-width: 100%;
+      }
+    }
+  }
+  @include breakpoint($medium) {
+    grid-template-columns: 1fr;
+
+    justify-items: center;
+    text-align: center;
+    .footer__middle-list {
+      justify-content: center;
+    }
+  }
+}
+.footer__bottom {
+  @include breakpoint($medium) {
+    text-align: center;
+    ul {
+      flex-direction: column;
+      li {
+        margin: 2rem 0 0 0;
+      }
+    }
+  }
+}
